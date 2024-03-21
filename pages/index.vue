@@ -5,7 +5,6 @@
     </canvas>
     <UButton color="orange" @click="toggleMode">{{ mode === 'draw' ? 'Switch to Erase' : 'Switch to Draw' }}</UButton>
   </div>
-  <ColorWheel />
 </template>
 
 <script setup lang="ts">
