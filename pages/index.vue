@@ -1,14 +1,18 @@
 <template>
   <div>
+    <h1>whiteboard</h1>
     <canvas ref="canvasRef" @mousedown="startDrawing" @mouseup="stopDrawing" @mousemove="draw" @mouseleave="stopDrawing"
       width="800" height="600">
     </canvas>
-    <UButton color="orange" @click="toggleMode">{{ mode === 'draw' ? 'Switch to Erase' : 'Switch to Draw' }}</UButton>
+    <q-btn color="primary" @click="toggleMode">{{ mode === 'draw' ? 'Switch to Erase' : 'Switch to Draw'
+      }}</q-btn>
   </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
+
+const colorMode = useColorMode();
 
 const canvasRef = ref(null);
 const isDrawing = ref(false);
@@ -77,3 +81,10 @@ const colorWheel = () => {
 */
 
 </script>
+
+<style>
+.dark-mode body {
+  background-color: #111011;
+  color: #ebf4f1;
+}
+</style>
