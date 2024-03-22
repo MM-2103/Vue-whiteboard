@@ -4,13 +4,15 @@
     <canvas ref="canvasRef" @mousedown="startDrawing" @mouseup="stopDrawing" @mousemove="draw" @mouseleave="stopDrawing"
       width="800" height="600">
     </canvas>
-    <q-btn color="primary" @click="toggleMode">{{ mode === 'draw' ? 'Switch to Erase' : 'Switch to Draw'
-      }}</q-btn>
+    <Button @click="toggleMode">{{ mode === 'draw' ? 'Switch to Erase' : 'Switch to Draw'
+      }}</Button>
+    <ColorPicker v-model="color" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
+import ColorPicker from 'primevue/colorpicker';
 
 const colorMode = useColorMode();
 
