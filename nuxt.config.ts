@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
-    '@nuxt/ui',
+    '@nuxtjs/color-mode',
+    'nuxt-quasar-ui',
+    '@pinia/nuxt',
+    '@nuxtjs/tailwindcss',
   ],
+  quasar: {}
 })
