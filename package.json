@@ -17,6 +17,7 @@
     "@vue/cli": "^5.0.8",
     "nuxt": "^3.11.0",
     "pinia": "^2.1.7",
+    "primeicons": "^6.0.1",
     "primevue": "^3.50.0",
     "vue": "^3.4.21",
     "vue-color-kit": "^1.0.6",

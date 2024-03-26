@@ -12,6 +12,6 @@ export default defineNuxtConfig({
     options: {
       unstyled: true
     },
-    importPT: { from: path.resolve(__dirname, './presets/lara/') }
+    importPT: { from: path.resolve(__dirname, './presets/wind/') }
   }
 })
