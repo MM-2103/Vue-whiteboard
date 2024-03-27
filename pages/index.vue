@@ -4,7 +4,7 @@
       <template #start>
         <Button class="mr-2" type="button" icon="pi pi-ellipsis-h" @click="toggle" aria-haspopup="true"
           aria-controls="overlay_menu" />
-        <Menu ref="menu" id="overlay_menu" :model="items" :popup="true" />
+        <Menu ref="menuRef" id="overlay_menu" :model="items" :popup="true" />
         <Button class="mr-2" @click="toggleMode">
           <i :class="[mode === 'draw' ? 'pi pi-pencil' : 'pi pi-eraser']"></i>
         </Button>
@@ -40,12 +40,25 @@ const mode = ref('draw');
 const color = ref('#FFF');
 const pageX = ref('n/a');
 const pageY = ref('n/a');
+const menuRef = ref(null);
 
+const toggle = (event) => {
+  menuRef.value.toggle(event); // This calls the toggle method of the Menu component
+};
 // Toggle between different modes
 const toggleMode = () => {
   mode.value = mode.value === 'draw' ? 'erase' : 'draw';
 }
 
+// Assuming other setup code remains unchanged
+
+const items = ref([
+  { label: 'Item 1', icon: 'pi pi-fw pi-plus', command: () => { console.log('Item 1 clicked'); } },
+  { label: 'Item 2', icon: 'pi pi-fw pi-download', command: () => { console.log('Item 2 clicked'); } },
+  { label: 'Item 3', icon: 'pi pi-fw pi-refresh', command: () => { console.log('Item 3 clicked'); } }
+]);
+
+// The rest of your script setup...
 // Drawing/Erasing function 
 const startDrawing = (event: MouseEvent) => {
   isDrawing.value = true;
