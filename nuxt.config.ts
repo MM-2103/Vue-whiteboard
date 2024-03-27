@@ -1,11 +1,17 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import path from 'path';
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/color-mode',
-    'nuxt-quasar-ui',
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss',
+    'nuxt-primevue',
   ],
-  quasar: {}
+  primevue: {
+    options: {
+      unstyled: true
+    },
+    importPT: { from: path.resolve(__dirname, './presets/wind/') }
+  }
 })
